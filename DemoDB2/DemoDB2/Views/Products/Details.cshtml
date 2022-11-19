@@ -1,0 +1,59 @@
+﻿@model DemoDB2.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông tin sản phẩm</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamePro)
+        </dd>
+
+        <dt>
+            Mô tả sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DecriptionPro)
+        </dd>
+
+        <dt>
+           Giá sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Hình sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePro)
+        </dd>
+
+        <dt>
+            Loại sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1.NameCate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Quay lại trang chủ", "Index")
+</p>

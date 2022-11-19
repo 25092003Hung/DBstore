@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="~/lib/owlcarousel/assets/owl.carousel.css" rel="stylesheet">
+<link href="~/lib/lightbox/css/lightbox.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="~/Content/home.css" rel="stylesheet">
+<link href="~/Content/home.css" rel="stylesheet" />
+<!-- animate -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<!-- FontAwesome 6.2.0 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary py-3 d-none d-md-block" style="position: relative;z-index: 200;top: 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pr-3" href="">FAQs</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white px-3" href="">Help</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white pl-3" href="">Support</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-white pl-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar p-0" style="z-index: 200;" id="header">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 1000;">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
+                <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <h1 class="m-0 display-4 text-primary">
+                        <span class="text-secondary">Nhóm</span>18
+                    </h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <li class="nav-item nav-link active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home")<li />
+                        <li class="nav-item nav-link">@Html.ActionLink("Product", "Index", "Products")</li>
+                    </div>
+                    <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Nhóm</span>18</h1>
+                    </a>
+                    <div class="navbar-nav mr-auto py-0">
+                        <li class="nav-item nav-link active">@Html.ActionLink("Service", "Index", "Service")</li>
+                        <li class="nav-item nav-link active">@Html.ActionLink("Bracnch", "Index", "Branch")</li>
+                        <li class="nav-item nav-link active">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div>@RenderBody()</div>
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
+        <div class="container text-center py-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <a href="index.html" class="navbar-brand m-0">
+                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">Nhóm</span>18</h1>
+                    </a>
+                </div>
+                <div class="col-12 mb-4">
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-12 mt-2 mb-4">
+                    <div class="row">
+                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
+                            <h5 class="font-weight-bold mb-2">Đến với cửa hàng của chúng tôi</h5>
+                            <p class="mb-2">828 Sư Vạn Hạnh, Phường 12, Quận 10,HCM</p>
+                            <p class="mb-0">+012 345 67890</p>
+                        </div>
+                        <div class="col-sm-6 text-center text-sm-left">
+                            <h5 class="font-weight-bold mb-2">Giờ mở cửa</h5>
+                            <p class="mb-2">Mon – Sat, 8AM – 5PM</p>
+                            <p class="mb-0">Sunday: 8AM – 12AM </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.js"></script>
+    <script src="~/lib/waypoints/waypoints.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.js"></script>
+    <script src="~/lib/isotope/isotope.pkgd.js"></script>
+    <script src="~/lib/lightbox/js/lightbox.js"></script>
+
+
+
+    <!-- Contact Javascript File -->
+    <script src="~/mail/jqBootstrapValidation.js"></script>
+    <script src="~/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/lib/js/mail.js"></script>
+
+    <!-- wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- back-top-top    -->
+    <script>
+        jQuery(document).ready(function () {
+            window.onscroll = changePos;
+            function changePos() {
+                var header = $("#header");
+                var headerheight = $("#header").height() + 200;
+                if (window.pageYOffset > headerheight) {
+                    header.addClass('scrolldown');
+                    header.removeClass('position-relative');
+                } else {
+                    header.removeClass('scrolldown');
+                    header.addClass('position-relative');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

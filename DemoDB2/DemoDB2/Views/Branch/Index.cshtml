@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5">Branch</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">Branch</p>
+        </div>
+    </div>
+</div>
+
+<section class="google-map">
+    <div class="container">
+        <div class="row">
+            <div class="left col-xl-6 col-lg-6 col-md-6 col-sx-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460488001304!2d106.66518151402403!3d10.77599986215008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fbcdcd0f9c5%3A0x74a6ef113e58e72a!2sHUFLIT%20Protocol%20Team!5e0!3m2!1svi!2s!4v1668655747661!5m2!1svi!2s" width="100%" height="450" style="border:0; cursor: pointer;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+                <!--  -->
+
+            </div>
+            <div class="right col-xl-6 col-lg-6 col-md-6 col-sx-6">
+                <h3>Danh sách chi nhánh cửa hàng</h3>
+                <div class="text-content">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="svh">Chi nhánh Sư Vạn Hạnh Q10</li>
+                        <li class="list-group-item" id="hm">Chi nhánh Hóc Môn</li>
+                        <li class="list-group-item" id="ct">Chi nhánh Cao Thắng</li>
+                        <li class="list-group-item" id="ts">Chi nhánh Thất sơn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

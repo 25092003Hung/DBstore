@@ -1,0 +1,194 @@
+﻿@model IEnumerable<DemoDB2.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3 mt-lg-5">Sản phẩm của chúng tôi</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">Product</p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Products Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h1 class="section-title position-relative text-center mb-5">Những sản phẩm mỹ phẩm</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/7.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Sữa Chống Nắng Anessa Dưỡng Da Kiềm Dầu</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/8.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">YSL Le Cushion Encre De Peau Luminous Matte</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/9.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Estee Lauder Advanced Night Repair Eye Complex</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/10.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Dior Capture Totale Intensive Essence Lotion</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/11.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">LANCÔME ADVANCED GÉNIFIQUE YEUX EYE CREAM</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/12.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Versace Bright Crystal Perfumed Bath & Shower</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <a href="" class="btn btn-primary py-3 px-5">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End -->
+<!-- Products Start 2 -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h1 class="section-title position-relative text-center my-5">Những sản phẩm nước hoa</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Sauvage Dior.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Sauvage Dior</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Gucci Bloom.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Gucci Bloom</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Gucci Flora.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Gucci Flora</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Narciso Musc Noir Rose.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Narciso Musc Rose</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Salvatore Ferragamo Signorina.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Salvatore  Signorina</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                    <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                        <h4 class="font-weight-bold text-white mb-0">$99</h4>
+                    </div>
+                    <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                        <img class="rounded-circle w-100 h-100" src="~/img/Scandal.png" style="object-fit: cover;">
+                    </div>
+                    <h5 class="font-weight-bold mb-4">Scandal</h5>
+                    <a href="" class="btn btn-sm btn-secondary">Đặt ngay</a>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <a href="" class="btn btn-primary py-3 px-5">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Products End 2 -->
