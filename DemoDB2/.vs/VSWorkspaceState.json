@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\DemoDB2",
-    "\\DemoDB2\\Content",
+    "\\DemoDB2\\Views",
+    "\\DemoDB2\\Views\\Home",
+    "\\DemoDB2\\Views\\Shared",
     "\\packages"
   ],
   "SelectedNode": "\\DemoDB2.sln",

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\PC\Desktop\New folder (3)\DemoDB2\DemoDB2\Models\EntitiesDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\Models\EntitiesDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
