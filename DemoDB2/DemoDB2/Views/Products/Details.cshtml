@@ -4,56 +4,41 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Thông tin sản phẩm</h2>
-
 <div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Tên sản phẩm
-        </dt>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="right col-lg-4">
+                    <img src="~/img/@Html.DisplayFor(model => model.ImagePro)"style="height: 450px;object-fit: cover;width:100%"     />
+                </div>
+                <div class="left col-lg-8">
+                    <h3>Product detail</h3>
+                    <table class="table w-100" style="font-size: 20px;">
+                        <thead>
+                            <tr>
+                                <td>Tên sản phẩm</td>
+                                <td>@Html.DisplayFor(model => model.NamePro)</td>
+                            </tr>
+                            <tr>
+                                <td>Mô tả sản phẩm</td>
+                                <td>@Html.DisplayFor(model => model.DecriptionPro)</td>
+                            </tr>
+                            <tr>
+                                <td>Giá sản phẩm</td>
+                                <td>@Html.DisplayFor(model => model.Price)</td>
+                            </tr>
+                            <tr>
+                                <td>Loại sản phẩm</td>
+                                <td>@Html.DisplayFor(model => model.Category1.NameCate)</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <p>
+                        <a href="/ShoppingCart/AddToCart/@Html.DisplayFor(model => model.ProductID)" class="btn btn-sm btn-secondary">Mua Ngay</a>
+                        @Html.ActionLink("Quay lại trang chủ", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <dd>
-            @Html.DisplayFor(model => model.NamePro)
-        </dd>
-
-        <dt>
-            Mô tả sản phẩm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DecriptionPro)
-        </dd>
-
-        <dt>
-           Giá sản phẩm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            Hình sản phẩm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagePro)
-        </dd>
-
-        <dt>
-            Loại sản phẩm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category1.NameCate)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Quay lại trang chủ", "Index")
-</p>

@@ -1,39 +1,23 @@
 ﻿@model IEnumerable<DemoDB2.Models.Category>
 
 <style>
-    #div-u {
-        padding-top: 30px;
-        margin-top: 20px;
-        background-color: cornflowerblue;
-        text-decoration: none;
+    ul{
+
     }
-
-    .div-cate {
-        height: 30px;
-        width: 100%;
+    ul li{
+        font-size:20px;
     }
-
-        .div-cate a {
-            color: yellow;
-            text-decoration: none;
-            font-size: large;
-        }
-
-            .div-cate a:hover {
-                color: chartreuse;
-                text-decoration: none;
-            }
 </style>
 <br />
-<h3 style="color:darkred; text-align:center;">Danh mục Loại SP</h3>
-<ul style="list-style-type: none;" id="div-u">
+<h3 style="color:darkred; text-align:left;margin-bottom:20px">Danh mục Loại SP</h3>
+<ul style="list-style-type: none;padding:0;" id="div-u" class="w-50">
     @{
         foreach (var item in Model)
         {
             <li class="div-cate">
-                @Html.ActionLink(item.NameCate, "ProductList", "Products", new {category = item.IDCate}, "")
+                @Html.ActionLink(item.NameCate,"ProductList", "Products", new {category = item.IDCate},"")
             </li>
-            <hr />
+            <hr/>
         }
     }
 </ul>

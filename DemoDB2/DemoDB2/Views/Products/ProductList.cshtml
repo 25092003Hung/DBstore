@@ -1,19 +1,65 @@
 ﻿
-@using PagedList.Mvc;
-@model PagedList.IPagedList<DemoDB2.Models.Product>
+
+@model IEnumerable<DemoDB2.Models.Product>
 
 @{
     ViewBag.Title = "ProductList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Content/product.css" rel="stylesheet" />
-<div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid page-header">
     <div class="container text-center py-5">
-        <h1 class="text-white display-3 mt-lg-5">Về Chúng Tôi</h1>
+        <h1 class="text-white display-3 mt-lg-5">Sản phẩm của chúng tôi</h1>
         <div class="d-inline-flex align-items-center text-white">
             <p class="m-0"><a class="text-white" href="">Home</a></p>
             <i class="fa fa-circle px-3"></i>
-            <p class="m-0">About</p>
+            <p class="m-0">Product</p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- Products Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row" style="justify-content:space-between;align-items:center">
+            <div class="col-lg-6 col-md-6">
+                @{ Html.RenderAction("CategoryPartial", "Categories"); }
+            </div>
+            <div class="col-lg-6 col-md-6">
+                @using (Html.BeginForm("ProductList", "Products", FormMethod.Get))
+                {
+                    <table>
+                        <tr>
+                            <td style="font-size: 16px;">
+                                Tên Sản phẩm :  @Html.TextBox("SearchString")
+                                <input type="submit" value="Tìm kiếm" class="btn btn-warning" style="padding: 8px 14px; font-size: 13px; font-weight: 500; background-image: linear-gradient(to right,#f55f8d 0,#f8ae56 51%,#f55f8d 100%); background-size: 200%; border: 1px solid transparent; transition: all .5s; border-radius: 30px; color: #fff; cursor: pointer; outline: 0; text-transform: uppercase; line-height: 1.2;"/>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h1 class="section-title position-relative text-center mb-5">Sản Phẩm</h1>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var pro in Model)
+            {
+                <div class="col-lg-3 col-md-6 mb-4 pb-2">
+                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+                            <h4 class="font-weight-bold text-white mb-0">@Html.DisplayFor(model => pro.Price)</h4>
+                        </div>
+                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+                            <img class="rounded-circle w-100 h-100" src="~/img/@pro.ImagePro" style="object-fit: cover;">
+                        </div>
+                        <h5 class="font-weight-bold mb-4">@Html.DisplayFor(model => pro.NamePro)</h5>
+                        <a href="/Products/Details/@pro.ProductID" class="btn btn-sm btn-secondary">Mua Ngay</a>
+                    </div>
+                </div>
+             }
         </div>
     </div>
 </div>
