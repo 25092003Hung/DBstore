@@ -13,7 +13,7 @@ namespace DemoDB2.Controllers
 {
     public class ProductsController : Controller
     {
-        private DBSportStoreEntities db = new DBSportStoreEntities();
+        private DBSportStoreEntities1 db = new DBSportStoreEntities1();
 
         // GET: Products
         public ActionResult Index()

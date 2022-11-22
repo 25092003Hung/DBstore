@@ -21,7 +21,7 @@
 <link href="~/lib/lightbox/css/lightbox.css" rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="~/Content/homee.css" rel="stylesheet" />
+<link href="~/Content/homeee.css" rel="stylesheet" />
 <!-- animate -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- FontAwesome 6.2.0 CSS -->
@@ -49,8 +49,11 @@
                         <a class="text-white px-3" href="">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a class="text-white pl-3" href="">
+                        <a class="text-white px-3" href="">
                             <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="text-white pl-3" href="/ShoppingCart/ShowCart">
+                            <i class="fa fa-shopping-cart"></i>
                         </a>
                     </div>
                 </div>
@@ -89,7 +92,9 @@
         </div>
     </div>
 
-    <div>@RenderBody()</div>
+    @RenderBody()
+
+
     <!-- Footer Start -->
     <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
         <div class="container text-center py-5">
@@ -156,7 +161,7 @@
             window.onscroll = changePos;
             function changePos() {
                 var header = $("#header");
-                var headerheight = $("#header").height() + 200;
+                var headerheight = $("#header").height() + 100;
                 if (window.pageYOffset > headerheight) {
                     header.addClass('scrolldown');
                     header.removeClass('position-relative');

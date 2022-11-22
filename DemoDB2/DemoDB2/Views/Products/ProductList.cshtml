@@ -32,7 +32,7 @@
                         <tr>
                             <td style="font-size: 16px;">
                                 Tên Sản phẩm :  @Html.TextBox("SearchString")
-                                <input type="submit" value="Tìm kiếm" class="btn btn-warning" style="padding: 8px 14px; font-size: 13px; font-weight: 500; background-image: linear-gradient(to right,#f55f8d 0,#f8ae56 51%,#f55f8d 100%); background-size: 200%; border: 1px solid transparent; transition: all .5s; border-radius: 30px; color: #fff; cursor: pointer; outline: 0; text-transform: uppercase; line-height: 1.2;"/>
+                                <input type="submit" value="Tìm kiếm" class="btn btn-warning" style="padding: 8px 14px; font-size: 13px; font-weight: 500; background-image: linear-gradient(to right,#f55f8d 0,#f8ae56 51%,#f55f8d 100%); background-size: 200%; border: 1px solid transparent; transition: all .5s; border-radius: 30px; color: #fff; cursor: pointer; outline: 0; text-transform: uppercase; line-height: 1.2;" />
                             </td>
                         </tr>
                     </table>
@@ -55,11 +55,11 @@
                         <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
                             <img class="rounded-circle w-100 h-100" src="~/img/@pro.ImagePro" style="object-fit: cover;">
                         </div>
-                        <h5 class="font-weight-bold mb-4">@Html.DisplayFor(model => pro.NamePro)</h5>
+                        <h5 class="font-weight-bold mb-4" style=" height: 70px;">@Html.DisplayFor(model => pro.NamePro)</h5>
                         <a href="/Products/Details/@pro.ProductID" class="btn btn-sm btn-secondary">Mua Ngay</a>
                     </div>
                 </div>
-             }
+            }
         </div>
     </div>
 </div>

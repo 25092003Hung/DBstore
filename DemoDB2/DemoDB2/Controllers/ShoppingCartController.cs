@@ -11,7 +11,7 @@ namespace DemoDB2.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        DBSportStoreEntities db = new DBSportStoreEntities();
+        DBSportStoreEntities1 db = new DBSportStoreEntities1();
         // GET: ShoppingCart
         public ActionResult ShowCart()
         {
@@ -93,9 +93,7 @@ namespace DemoDB2.Controllers
             }
             catch
             {
-                return Content("Có sai sót! Xin kiểm tra lại thông tin"); ;
-
-
+                return Content("Có sai sót! Xin kiểm tra lại thông tin");
             }
         }
         public ActionResult CheckOut_Success()
