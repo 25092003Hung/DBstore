@@ -46,7 +46,7 @@ namespace DemoDB2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDCus,NameCus,PhoneCus,EmailCus")] Customer customer)
+        public ActionResult Create([Bind(Include = "IDCus,NameCus,PhoneCus,EmailCus,UserName,Password")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DemoDB2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDCus,NameCus,PhoneCus,EmailCus")] Customer customer)
+        public ActionResult Edit([Bind(Include = "IDCus,NameCus,PhoneCus,EmailCus,UserName, Password")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +122,34 @@ namespace DemoDB2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        // Tạo view cho khách hàng Login
+        public ActionResult LoginCus()
+        {
+            return View();
+        }
+        // Xử lý tìm kiếm UserName, password trong Customer và thông báo
+        [HttpPost]
+        public ActionResult LoginAcountCus(Customer _cus)
+        {
+            // check là khách hàng cần tìm
+            var check = db.Customers.Where(s => s.UserName == _cus.UserName && s.Password ==
+           _cus.Password).FirstOrDefault();
+            if (check == null) //không có KH
+            {
+                ViewBag.ErrorInfo = "Không có KH này";
+                return View("LoginCus");
+            }
+            else
+            { // Có tồn tại KH -> chuẩn bị dữ liệu đưa về lại ShowCart.cshtml
+                db.Configuration.ValidateOnSaveEnabled = false;
+                Session["IDCus"] = check.IDCus;
+                Session["Passwod"] = check.Password;
+                Session["NameCus"] = check.NameCus;
+                Session["PhoneCus"] = check.PhoneCus;
+                // Quay lại trang giỏ hàng với thông tin cần thiết
+                return RedirectToAction("ShowCart", "ShoppingCart");
+            }
         }
     }
 }

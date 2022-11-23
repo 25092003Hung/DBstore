@@ -23,6 +23,8 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="DBSportStoreModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="IDCus" ColumnName="IDCus" />
           <ScalarProperty Name="NameCus" ColumnName="NameCus" />
           <ScalarProperty Name="PhoneCus" ColumnName="PhoneCus" />

@@ -30,6 +30,8 @@
           <Property Name="NameCus" Type="nvarchar" MaxLength="50" />
           <Property Name="PhoneCus" Type="nvarchar" MaxLength="15" />
           <Property Name="EmailCus" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -164,6 +166,8 @@
           <Property Name="PhoneCus" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="EmailCus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="OrderProes" Relationship="Self.FK__OrderPro__IDCus__2C3393D0" FromRole="Customer" ToRole="OrderPro" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -301,6 +305,8 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="DBSportStoreModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="IDCus" ColumnName="IDCus" />
                 <ScalarProperty Name="NameCus" ColumnName="NameCus" />
                 <ScalarProperty Name="PhoneCus" ColumnName="PhoneCus" />

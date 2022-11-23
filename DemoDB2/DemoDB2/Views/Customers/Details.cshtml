@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>thông tin chi tiết</h2>
+<h2>Details</h2>
 
 <div>
     <h4>Customer</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên khách hàng
+            @Html.DisplayNameFor(model => model.NameCus)
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            Điện thoại
+            @Html.DisplayNameFor(model => model.PhoneCus)
         </dt>
 
         <dd>
@@ -28,16 +28,32 @@
         </dd>
 
         <dt>
-            Email
+            @Html.DisplayNameFor(model => model.EmailCus)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EmailCus)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.IDCus }) |
-    @Html.ActionLink("Quay lại trang chủ", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCus }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>
