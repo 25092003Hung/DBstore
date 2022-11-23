@@ -1,12 +1,12 @@
-﻿@model IEnumerable<DemoDB2.Models.Category>
-
+﻿
+@model IEnumerable<DemoDB2.Models.Category>
 <style>
-    ul{
+    ul {
+    }
 
-    }
-    ul li{
-        font-size:20px;
-    }
+        ul li {
+            font-size: 20px;
+        }
 </style>
 <br />
 <h3 style="color:darkred; text-align:left;margin-bottom:20px">Danh mục Loại SP</h3>
@@ -15,9 +15,9 @@
         foreach (var item in Model)
         {
             <li class="div-cate">
-                @Html.ActionLink(item.NameCate,"ProductList", "Products", new {category = item.IDCate},"")
+                @Html.ActionLink(item.NameCate, "ProductList", "Products", new { category = item.IDCate }, "")
             </li>
-            <hr/>
+            <hr />
         }
     }
 </ul>

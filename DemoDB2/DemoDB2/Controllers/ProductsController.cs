@@ -16,10 +16,28 @@ namespace DemoDB2.Controllers
         private DBSportStoreEntities1 db = new DBSportStoreEntities1();
 
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(string category, int ? page)
         {
             var products = db.Products.Include(p => p.Category1);
-            return View(products.ToList());
+            if (category == null)
+            {
+                products = db.Products.OrderByDescending(x => x.NamePro);
+            }
+            else
+            {
+                products = db.Products.OrderByDescending(x => x.Category).Where(x => x.Category == category);
+            }
+            // Khai báo mỗi trang 4 sản phẩm
+            int pageSize = 4;
+            // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
+            // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
+            int pageNumber = (page ?? 1);
+            //Nếu page = null thì đặt lại page là 1.
+            if (page == null) page = 1;
+            // Trả về các product được phân trang theo kích thước và số trang.
+            return View(products.ToPagedList(pageNumber, pageSize));
+            
+            
         }
 
         // GET: Products/Details/5
@@ -150,7 +168,7 @@ namespace DemoDB2.Controllers
                 products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
             }
             // Khai báo mỗi trang 4 sản phẩm
-             int pageSize = 100;
+             int pageSize = 4;
             // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
             // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
             int pageNumber = (page ?? 1);
