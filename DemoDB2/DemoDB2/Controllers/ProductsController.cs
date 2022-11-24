@@ -151,6 +151,13 @@ namespace DemoDB2.Controllers
         public ActionResult ProductList(string category, int? page, string SearchString, double min = double.MinValue, double max = double.MaxValue)
         {
             var products = db.Products.Include(p => p.Category1);
+            ViewBag.Title = category;
+            var cate = db.Categories.Include(p => p.IDCate);
+            if(category != null)
+            {
+                Session["cate"] = category;
+            }
+            
             if (category == null)
             {
                 products = db.Products.OrderByDescending(x => x.NamePro);
@@ -167,12 +174,13 @@ namespace DemoDB2.Controllers
             {
                 products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
             }
+         
             // Khai báo mỗi trang 4 sản phẩm
-             int pageSize = 4;
+            int pageSize = 4;
             // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
             // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
             int pageNumber = (page ?? 1);
-             //Nếu page = null thì đặt lại page là 1.
+            //Nếu page = null thì đặt lại page là 1.
             if (page == null) page = 1;
             // Trả về các product được phân trang theo kích thước và số trang.
             return View(products.ToPagedList(pageNumber, pageSize));

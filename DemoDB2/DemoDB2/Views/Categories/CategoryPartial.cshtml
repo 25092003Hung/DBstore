@@ -15,7 +15,7 @@
         foreach (var item in Model)
         {
             <li class="div-cate">
-                @Html.ActionLink(item.NameCate, "ProductList", "Products", new { category = item.IDCate }, "")
+                @Html.ActionLink(item.NameCate, "ProductList", "Products", new{ category = item.IDCate }, "")
             </li>
             <hr />
         }

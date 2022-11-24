@@ -66,5 +66,5 @@
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 <!--Control PagedListPager: mô tả mô hình với số trang là liên kết với tham số "Index" và tham
 số page-->
-@Html.PagedListPager(Model, page => Url.Action("ProductList", new { page }))
+@Html.PagedListPager(Model, page => Url.Action("ProductList", "Products", new { category = @Session["cate"], page = page}));
 <!-- Kết thúc -->

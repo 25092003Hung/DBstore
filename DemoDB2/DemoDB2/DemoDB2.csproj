@@ -201,6 +201,7 @@
     <Content Include="img\9.png" />
     <Content Include="img\BaoHanh.png" />
     <Content Include="img\contact.png" />
+    <Content Include="img\download.png" />
     <Content Include="img\GiaoHangFree.png" />
     <Content Include="img\GiaoHangNhanh.png" />
     <Content Include="img\Gucci Bloom.png" />
@@ -318,7 +319,6 @@
     <Content Include="Views\ShoppingCart\CheckOut_Success.cshtml" />
     <Content Include="Views\Branch\Index.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\LoginUser\Index.cshtml" />
     <Content Include="Views\LoginUser\RegisterUser.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
