@@ -148,7 +148,9 @@ namespace DemoDB2.Controllers
                 Session["NameCus"] = check.NameCus;
                 Session["PhoneCus"] = check.PhoneCus;
                 // Quay lại trang giỏ hàng với thông tin cần thiết
-                return RedirectToAction("ShowCart", "ShoppingCart");
+                //return RedirectToAction("ShowCart", "ShoppingCart");
+                return RedirectToAction("Index", "Home");
+               
             }
         }
     }

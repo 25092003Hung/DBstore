@@ -21,7 +21,7 @@
 <link href="~/lib/lightbox/css/lightbox.css" rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="~/Content/homeee.css" rel="stylesheet" />
+<link href="~/Content/homie.css" rel="stylesheet" />
 <!-- animate -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- FontAwesome 6.2.0 CSS -->
@@ -34,24 +34,25 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a href="@Url.Action("Logincus","Customers")" class="text-white">Sign In</a>
+                        <a href="@Url.Action("Logincus","Customers")" id="signin" class="text-white">Sign In</a>
+                        <span class="text-white px-3" id="helloname">@Session["NameCus"]</span>
                         <span class="text-white px-3">|</span>
-                        <a href="@Url.Action("Create","Customers")" class="text-white">Sign Up</a>
+                        <a href="@Url.Action("Create","Customers")" id="signup" class="text-white">Sign Up</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="">
+                        <a class="text-white px-3" href="https://www.facebook.com/Thieubaotram/">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a class="text-white px-3" href="">
+                        <a class="text-white px-3" href="https://www.instagram.com/sontungmtp/?hl=vi">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a class="text-white px-3" href="">
+                        <a class="text-white px-3" href="https://www.youtube.com/channel/UCrdtFUU30lPI7S46Bop9zMw">
                             <i class="fab fa-youtube"></i>
                         </a>
                         <a class="text-white pl-3" href="/ShoppingCart/ShowCart">
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="fa fa-shopping-cart" id="cart"></i>
                         </a>
                     </div>
                 </div>
@@ -103,9 +104,9 @@
                     </a>
                 </div>
                 <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://twitter.com/elonmusk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://www.facebook.com/Thieubaotram/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary btn-social" href="https://www.instagram.com/sontungmtp/?hl=vi"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-12 mt-2 mb-4">
                     <div class="row">
@@ -145,7 +146,9 @@
     <script src="~/mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="~/lib/js/mail.js"></script>
+    <script src="~/lib/js/controller.js"></script>
+    <script src="~/lib/js/main.js"></script>
+
 
     <!-- wow -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -50,7 +50,7 @@
                             <a href="@Url.Action("Create", "Customers")" class="btn btn-success">Đăng ký</a>
                         </td>
                         <td colspan="3" style="text-align:right; font-size:x-large; color: crimson;">
-                            Tổng tiền : @Model.Total_money().ToString("#,##0").Replace(',', '.') Đồng
+                            Tổng tiền : @Model.Total_money().ToString("#,##0").Replace(',', '.') $
                         </td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@
                                     </tr>
                                     <tr>
                                         <td> Khách hàng : </td>
-                                        <td><input type="text" name="NameCustomer" value="@Session["NameCus"]" required /></td>
+                                        <td><input id="namecus" type="text" name="NameCustomer" value="@Session["NameCus"]" required /></td>
                                     </tr>
                                     <tr>
                                         <td> Điên thoại : </td>
@@ -79,7 +79,7 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <a href="@Url.Action("LoginCus", "Customers")" class="btn btn-primary">Đăng nhập</a>
+                                            <a href="@Url.Action("LoginCus", "Customers")" class="btn btn-primary" id="dangnhapshowcart">Đăng nhập</a>
                                             (Hãy đăng nhập trước)
                                             <input type="submit" value="Thanh toán" class="btn btn-danger" />
                                         </td>

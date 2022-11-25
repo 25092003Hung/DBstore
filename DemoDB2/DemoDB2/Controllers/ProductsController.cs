@@ -151,7 +151,6 @@ namespace DemoDB2.Controllers
         public ActionResult ProductList(string category, int? page, string SearchString, double min = double.MinValue, double max = double.MaxValue)
         {
             var products = db.Products.Include(p => p.Category1);
-            ViewBag.Title = category;
             var cate = db.Categories.Include(p => p.IDCate);
             if(category != null)
             {

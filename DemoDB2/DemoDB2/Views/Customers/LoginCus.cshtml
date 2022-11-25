@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td style="padding: 5px">@Html.LabelFor(model => model.Password)</td>
-        <td>@Html.EditorFor(model => model.Password)</td>
+        <td id="password">@Html.PasswordFor(model => model.Password)</td>
         <td>@Html.ValidationMessageFor(model => model.Password)</td>
         @if (ViewBag.ErrorInfo == null)
         {

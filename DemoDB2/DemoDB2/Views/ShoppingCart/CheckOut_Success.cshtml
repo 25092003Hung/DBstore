@@ -3,12 +3,17 @@
     ViewBag.Title = "CheckOut_Success";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@if(Model != null)
+            {
+
+            
 <section style="margin-top: 50px;">
     <div class="container">
         <div class="row">
             <div class="col-6">
                 <div class="img text-center">
-                    <img src="./img/download.png" alt="">
+                    <img src="~/img/download.png" alt="">
                 </div>
                 <div class="content mt-5">
                     <p>CÁM ƠN BẠN ĐÃ ỦNG HỘ SHOP</p>
@@ -18,28 +23,34 @@
             <div class="col-6">
                 <div class="text-bill">
                     <p>HÓA ĐƠN MUA HÀNG CỦA BẠN</p>
-                    @*<table class="w-100">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">tên sản phẩm</th>
-                                <th style="width: 30%;">số lượng</th>
-                                <th style="width: 30%;">thành tiền</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in model.items)
-                            {
-                                decimal total = item._quantity * (decimal)item._product.price.value;
-                                <tr>
-                                    <td>@html.displayfor(model => item._product.namepro)</td>
-                                    <td>@html.displayfor(model => item._quantity)</td>
-                                    <td>total $</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>*@
+                    <table class="w-100">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">tên sản phẩm</th>
+                    <th style="width: 30%;">số lượng</th>
+                    <th style="width: 30%;">thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    decimal total = item._quantity * (decimal)item._product.Price.Value;
+                    <tr>
+                        <td>@item._product</td>
+                        <td>@item._quantity</td>
+                        <td>@total.ToString("#,##0").Replace(',', '.') $</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
                 </div>
             </div>
         </div>
     </div>
 </section>
+}
+else { 
+    <p>
+        Cảm ơn bạn đã mua hàng
+    </p>
+}
