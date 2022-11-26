@@ -1,23 +1,30 @@
 ﻿@model DemoDB2.Models.AdminUser
+
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <style>
     .field-validation-error {
         color: red;
     }
 </style>
+
 <h2>ĐĂNG NHẬP</h2>
 <hr />
 @using (Html.BeginForm("LoginAcount", "LoginUser"))
 {
-    <input type="hidden" value="@Session["chon"]" name="chon" />
     @Html.AntiForgeryToken()
     <table>
         <tr>
-            <td style="padding: 5px">@Html.LabelFor(model => model.ID) </td>
-            <td>@Html.TextBoxFor(model => model.ID, new { style = "filed-validationerror" })</td>
-            <td>@Html.ValidationMessageFor(model => model.ID)</td>
+            <td style="padding: 5px">@Html.LabelFor(model => model.NameUser) </td>
+            <td>@Html.TextBoxFor(model => model.NameUser, new { style = "filed-validation-error" })</td>
+            <td>@Html.ValidationMessageFor(model => model.NameUser)</td>
+        </tr>
+        <tr>
+            <td style="padding: 5px">@Html.LabelFor(model => model.RoleUser) </td>
+            <td>@Html.TextBoxFor(model => model.RoleUser, new { style = "filed-validation-error" })</td>
+            <td>@Html.ValidationMessageFor(model => model.RoleUser)</td>
         </tr>
         <tr>
             <td style="padding: 5px">@Html.LabelFor(model => model.PasswordUser)</td>
@@ -32,5 +39,12 @@
             <td></td>
             <td><input type="submit" value="Login" class="btn btn-primary" /></td>
         </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <a href="~/Products/IndexStart" class="glyphicon glyphicon-home" style="font-size:large"> Trở về trang chủ</a>
+            </td>
+        </tr>
     </table>
+
 }
+

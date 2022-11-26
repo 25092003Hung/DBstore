@@ -50,11 +50,22 @@ namespace DemoDB2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var cus = new Customers();
+                if (cus.CheckUserName(customer.UserName))
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại!!");
+                }
+                else if (cus.CheckEmail(customer.EmailCus))
+                {
+                    ModelState.AddModelError("", "Email đã tồn tại!!");
+                }
+                else
+                {
+                    db.Customers.Add(customer);
+                    db.SaveChanges();
+                    return RedirectToAction("LoginCus");
+                }
             }
-
             return View(customer);
         }
 
@@ -152,6 +163,11 @@ namespace DemoDB2.Controllers
                 return RedirectToAction("Index", "Home");
                
             }
+        }
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("InDex", "Home");
         }
     }
 }

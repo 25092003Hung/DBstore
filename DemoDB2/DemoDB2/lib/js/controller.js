@@ -1,14 +1,16 @@
-﻿function xoaSignIn() {
+﻿function Xoalanmot() {
     if (document.getElementById('helloname').innerHTML != "") {
         document.getElementById('signin').style.display = "none";
-        document.getElementById('signup').innerHTML = "Log Out";
+        document.getElementById('signup').style.display = "none";
+        document.getElementById('logout').style.display = "block";
+        document.getElementById('helloname').style.display = "block";
     }
 }
-xoaSignIn();
+Xoalanmot();
 
-function xoaDangNhap() {
-    if (document.getElementById('helloname').innerHTML != "") {
-        document.getElementById('dangnhapshowcart').style.display = "none";
-    }
+document.getElementById('logout').onclick = function () {
+    document.getElementById('signin').style.display = "block";
+    document.getElementById('signup').style.display = "block";
+    document.getElementById('helloname').style.display = "none";
+    document.getElementById('logout').style.display = "none";
 }
-xoaDangNhap();

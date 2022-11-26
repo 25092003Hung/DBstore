@@ -89,7 +89,8 @@ namespace DemoDB2.Controllers
                 }
                 db.SaveChanges();
                 cart.ClearCart();
-                return RedirectToAction("CheckOut_Success", "ShoppingCart",_order.ID);
+                return RedirectToAction("CheckOut_Success", "ShoppingCart",new {cart.Items });
+                //return Redirect("CheckOut_Success", "ShoppingCart",new { _order.IDCus});
             }
             catch
             {
@@ -99,7 +100,8 @@ namespace DemoDB2.Controllers
         public ActionResult CheckOut_Success()
         {
             Cart cart = Session["Cart"] as Cart;
-            return View();
+            
+            return View(cart);
         }
     }
 }

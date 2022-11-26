@@ -11,17 +11,16 @@ namespace DemoDB2.Controllers
         DBSportStoreEntities1 db = new DBSportStoreEntities1();
         // GET: LoginUser
         // Phương thức tạo view cho Login
-        public ActionResult Index(int chon)
+        public ActionResult Index()
         {
-            Session["chon"] = chon;
             return View();
         }
         // Xử lý tìm kiếm ID, password trong AdminUser và thông báo
         [HttpPost]
-        public ActionResult LoginAcount(AdminUser _user, string chon)
+        public ActionResult LoginAcount(AdminUser _user)
         {
-            var check = db.AdminUsers.Where(s => s.ID == _user.ID && s.PasswordUser ==
-           _user.PasswordUser).FirstOrDefault();
+            var check = db.AdminUsers.
+                Where(s => s.NameUser == _user.NameUser && s.PasswordUser == _user.PasswordUser).FirstOrDefault();
             if (check == null)
             {
                 ViewBag.ErrorInfo = "Sai Info";
@@ -31,20 +30,17 @@ namespace DemoDB2.Controllers
             {
                 db.Configuration.ValidateOnSaveEnabled = false;
                 Session["ID"] = _user.ID;
+                Session["NameUser"] = _user.NameUser;
                 Session["PasswodUser"] = _user.PasswordUser;
-                Session["chon"] = chon;
-                if (chon.ToString() == "1")
-                    return RedirectToAction("Index", "Products");
-                else if (chon.ToString() == "2")
-                    return RedirectToAction("Index", "Categories");
-                else if (chon.ToString() == "3")
-                    return RedirectToAction("Index", "Customers");
-                else if (chon.ToString() == "4")
-                    return RedirectToAction("Index", "OrderProes");
-                else if (chon.ToString() == "5")
-                    return RedirectToAction("RegisterUser", "LoginUser");
+                Session["RoleUser"] = _user.RoleUser;
+                Session["chon"] = _user.RoleUser;
+                string chon = _user.RoleUser;
+                //var ch = Session["chon"];
+                //return RedirectToAction("ProductList", "Products");
+                if (chon.ToString() == "admin")
+                    return RedirectToAction("Index", "AdminUsers");
                 else
-                    return RedirectToAction("ProductList", "Products");
+                    return RedirectToAction("IndexStart", "Home");
             }
         }
         // Regíter
@@ -67,6 +63,16 @@ namespace DemoDB2.Controllers
                 ViewBag.ErrorRegister = "ID này đã có rồi !!!";
             }
             return View();
+        }
+        [ChildActionOnly]
+        public PartialViewResult menuPartial()
+        {
+            return PartialView();
+        }
+        public ActionResult LogOutUser()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "LoginUser");
         }
     }
 }
