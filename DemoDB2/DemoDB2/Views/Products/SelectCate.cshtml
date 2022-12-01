@@ -1,0 +1,8 @@
+﻿@model DemoDB2.Models.Category
+@{
+    ViewBag.Title = "SelectCate";
+    Layout = "";
+}
+
+@Html.DropDownListFor(model => model.IDCate, new SelectList(Model.ListCate.OrderBy(model => model.NameCate), "IDCate", "NameCate", "--Select Cate--"))
+

@@ -3,9 +3,11 @@
     "",
     "\\DemoDB2",
     "\\DemoDB2\\DemoDB2",
+    "\\DemoDB2\\DemoDB2\\lib",
+    "\\DemoDB2\\DemoDB2\\lib\\js",
     "\\DemoDB2\\DemoDB2\\Views",
     "\\DemoDB2\\DemoDB2\\Views\\Shared"
   ],
-  "SelectedNode": "\\DemoDB2\\DemoDB2\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\DemoDB2\\DemoDB2\\lib\\js\\controller.js",
   "PreviewInSolutionExplorer": false
 }

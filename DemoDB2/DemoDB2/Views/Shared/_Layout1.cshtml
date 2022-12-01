@@ -30,17 +30,17 @@
 <body>
 
     <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <li class="nav-item" style="border-right:1px solid">
+            <a class="nav-link" aria-current="page" href="~/LoginUser/LogOutUser">Log Out</a>
+        </li>
+        <li class="nav-item"style="border-right:1px solid">
+            @Html.ActionLink("Sản Phẩm", "Index", "Products", new { @class = "nav-link" })
+        </li>
+        <li class="nav-item"style="border-right:1px solid">
+            @Html.ActionLink("khách hàng", "Index", "Customers", new { @class = "nav-link" })
         </li>
         <li class="nav-item">
-            @Html.ActionLink("Sản Phẩm", "Index", "Products");
-        </li>
-        <li class="nav-item">
-            @Html.ActionLink("khách hàng", "Index", "Customers");
-        </li>
-        <li class="nav-item">
-            @Html.ActionLink("Đơn hàng", "Index", "OrderProes");
+            @Html.ActionLink("Đơn hàng", "Index", "OrderProes", new { @class = "nav-link" })
         </li>
     </ul>
 
@@ -48,8 +48,5 @@
 
     <!-- Footer End -->
     <!-- Back to Top -->
-
-
-
 </body>
 </html>

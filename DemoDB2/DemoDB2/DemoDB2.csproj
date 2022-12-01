@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\controller.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\homeee.css" />
     <Content Include="Content\homie.css" />
@@ -338,6 +339,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\LoginCus.cshtml" />
     <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Products\SelectCate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

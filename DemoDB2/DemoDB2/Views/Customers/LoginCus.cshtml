@@ -1,12 +1,13 @@
 ﻿@model DemoDB2.Models.Customer
 @{
     ViewBag.Title = "LoginCus";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }<h2>ĐĂNG NHẬP KHÁCH HÀNG</h2>
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2 style="text-align:center;margin-top:34px">ĐĂNG NHẬP KHÁCH HÀNG</h2>
 <hr />
 @using (Html.BeginForm("LoginAcountCus", "Customers"))
 {
     @Html.AntiForgeryToken()
-    <table>
+    <table style="margin:auto">
         <tr>
             <td style="padding: 5px">@Html.LabelFor(model => model.UserName) </td>
             <td>
@@ -30,5 +31,36 @@
         <td></td>
         <td><input type="submit" value="Login" class="btn btn-primary" /></td>
     </tr>
-</table>   
+</table>
+
+//
+    @*<div class="login-box">
+        <h2>Login</h2>
+        <form>
+            <div class="user-box">
+                @Html.ValidationMessageFor(model => model.UserName)
+                @Html.LabelFor(model => model.UserName)
+                @Html.TextBoxFor(model => model.UserName, new
+                {
+                    style = "filed-validation-error"
+       })
+            </div>
+            <div class="user-box">
+                <input type="password" name="" required="">
+                @Html.LabelFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+                @if (ViewBag.ErrorInfo == null)
+                {
+                    <p>@ViewBag.ErrorInfo</p>
+                }
+            </div>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </a>
+        </form>
+    </div>*@   
 }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DemoDB2.Models;
 using PagedList;
+using System.IO;
 
 namespace DemoDB2.Controllers
 {
@@ -41,8 +42,8 @@ namespace DemoDB2.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate");
-            return View();
+            Product pro = new Product();
+            return View(pro);
         }
 
         // POST: Products/Create
@@ -50,17 +51,26 @@ namespace DemoDB2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,NamePro,DecriptionPro,Category,Price,ImagePro")] Product product)
+        public ActionResult Create(Product item)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Products.Add(product);
+                if (item.UploadImage != null)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(item.UploadImage.FileName);
+                    string extent = Path.GetExtension(item.UploadImage.FileName);
+                    filename = filename + extent;
+                    item.ImagePro = "~/img/" + filename;
+                    item.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/img/"), filename));
+                }
+                db.Products.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", product.Category);
-            return View(product);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Products/Edit/5
@@ -167,5 +177,12 @@ namespace DemoDB2.Controllers
             // Trả về các product được phân trang theo kích thước và số trang.
             return View(products.ToPagedList(pageNumber, pageSize));
         }
+        public ActionResult SelectCate()
+        {
+            Category listItem = new Category();
+            listItem.ListCate = db.Categories.ToList<Category>();
+            return PartialView(listItem);
+        }
+    
     }
 }

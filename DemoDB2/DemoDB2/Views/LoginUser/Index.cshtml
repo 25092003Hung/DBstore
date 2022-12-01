@@ -10,12 +10,12 @@
     }
 </style>
 
-<h2>ĐĂNG NHẬP</h2>
+<h2 style="text-align:center;margin-top:34px">ĐĂNG NHẬP</h2>
 <hr />
 @using (Html.BeginForm("LoginAcount", "LoginUser"))
 {
     @Html.AntiForgeryToken()
-    <table>
+    <table style="margin:auto">
         <tr>
             <td style="padding: 5px">@Html.LabelFor(model => model.NameUser) </td>
             <td>@Html.TextBoxFor(model => model.NameUser, new { style = "filed-validation-error" })</td>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td colspan="3" align="center">
-                <a href="~/Products/IndexStart" class="glyphicon glyphicon-home" style="font-size:large"> Trở về trang chủ</a>
+                <a href="@Url.Action("Index","Home")" class="glyphicon glyphicon-home" style="font-size:large"> Trở về trang chủ</a>
             </td>
         </tr>
     </table>
