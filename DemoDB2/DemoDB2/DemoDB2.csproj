@@ -196,6 +196,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\aboutus.jpg" />
+    <Content Include="img\check.png" />
     <Content Include="img\10.png" />
     <Content Include="img\11.png" />
     <Content Include="img\12.png" />
@@ -204,9 +206,10 @@
     <Content Include="img\8.png" />
     <Content Include="img\9.png" />
     <Content Include="img\BaoHanh.png" />
+    <Content Include="img\chinhanh.jpg" />
     <Content Include="img\contact.png" />
     <Content Include="img\dat.jpg" />
-    <Content Include="img\download.png" />
+    <Content Include="img\dichvu.jpg" />
     <Content Include="img\GiaoHangFree.png" />
     <Content Include="img\GiaoHangNhanh.png" />
     <Content Include="img\Gucci Bloom.png" />
@@ -224,13 +227,6 @@
     <Content Include="img\Sauvage Dior.png" />
     <Content Include="img\Scandal.png" />
     <Content Include="img\sontung.png" />
-    <Content Include="img\team-1.jpg" />
-    <Content Include="img\team-2.jpg" />
-    <Content Include="img\team-3.jpg" />
-    <Content Include="img\team-4.jpg" />
-    <Content Include="img\testimonial-1.jpg" />
-    <Content Include="img\testimonial-2.jpg" />
-    <Content Include="img\testimonial-3.jpg" />
     <Content Include="img\z3831607438910_5b4251d34c0d3478103b59b8065586bc.jpg" />
     <Content Include="img\z3831615791503_7fd80fce0eb820b335a03ae2c64ba581.jpg" />
     <Content Include="lib\counterup\counterup.js" />

@@ -6,11 +6,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- Header Start -->
-<div class="jumbotron jumbotron-fluid page-header">
+<div class="jumbotron jumbotron-fluid page-header" style="background-image: url('../../img/z3831615791503_7fd80fce0eb820b335a03ae2c64ba581.jpg'); background-size: cover; background-position: center">
     <div class="container text-center py-5">
         <h1 class="text-white display-3 mt-lg-5">Sản phẩm của chúng tôi</h1>
         <div class="d-inline-flex align-items-center text-white">
-            <p class="m-0"><a class="text-white" href="">Home</a></p>
+            <p class="m-0"><a class="text-dark" href="">Home</a></p>
             <i class="fa fa-circle px-3"></i>
             <p class="m-0">Product</p>
         </div>
@@ -66,7 +66,7 @@
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 <!--Control PagedListPager: mô tả mô hình với số trang là liên kết với tham số "Index" và tham
 số page-->
-@Html.PagedListPager(Model, page => Url.Action("ProductList", "Products", new { category = @Session["cate"], page = page}));
+@Html.PagedListPager(Model, page => Url.Action("ProductList", "Products", new { category = @Session["cate"], page = page}))
 <!-- Kết thúc -->
 <style>
     .pagination-container .pagination li{

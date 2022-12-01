@@ -34,6 +34,9 @@
             <a class="nav-link" aria-current="page" href="~/LoginUser/LogOutUser">Log Out</a>
         </li>
         <li class="nav-item" style="border-right:1px solid">
+            <a href="@Url.Action("Index","AdminUsers")" class="nav-link">Admins</a>
+        </li>
+        <li class="nav-item" style="border-right:1px solid">
             <a href="@Url.Action("Index","Products")" class="nav-link">Sản Phẩm</a>
         </li>
         <li class="nav-item" style="border-right:1px solid">
@@ -44,7 +47,7 @@
         </li>
     </ul>
 
-    @RenderBody();
+    @RenderBody()
 
     <!-- Footer End -->
     <!-- Back to Top -->
