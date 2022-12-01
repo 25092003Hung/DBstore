@@ -89,7 +89,7 @@ namespace DemoDB2.Controllers
                 }
                 db.SaveChanges();
                 cart.ClearCart();
-                return RedirectToAction("CheckOut_Success", "ShoppingCart",new {cart.Items });
+                return RedirectToAction("CheckOut_Success", "ShoppingCart", new { @i = _order.IDCus });
                 //return Redirect("CheckOut_Success", "ShoppingCart",new { _order.IDCus});
             }
             catch
@@ -97,11 +97,12 @@ namespace DemoDB2.Controllers
                 return Content("Có sai sót! Xin kiểm tra lại thông tin");
             }
         }
-        public ActionResult CheckOut_Success()
+        public ActionResult CheckOut_Success(int i)
         {
-            Cart cart = Session["Cart"] as Cart;
-            
-            return View(cart);
+            var ddh = db.OrderProes.Where(s => s.IDCus == i).FirstOrDefault();
+            var orderdetail = db.OrderDetails.Where(s => s.IDOrder == ddh.ID);
+
+            return View(orderdetail);
         }
     }
 }

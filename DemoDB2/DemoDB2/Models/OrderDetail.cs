@@ -11,12 +11,14 @@ namespace DemoDB2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class OrderDetail
     {
         public int ID { get; set; }
         public Nullable<int> IDProduct { get; set; }
         public Nullable<int> IDOrder { get; set; }
+        [Range(1,99)]
         public Nullable<int> Quantity { get; set; }
         public Nullable<double> UnitPrice { get; set; }
     

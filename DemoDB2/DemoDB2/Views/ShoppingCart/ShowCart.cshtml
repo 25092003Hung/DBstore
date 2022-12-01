@@ -32,8 +32,8 @@
                                 @using (Html.BeginForm("Update_Cart_Quantity", "ShoppingCart"))
                                 {
                                     <input type="hidden" value="@item._product.ProductID" name="idPro" />
-                                    <input type="number" value="@item._quantity" name="carQuantity" style="text-align:right" />
-                                    <input type="submit" value="Cập nhật" />
+                                    <input type="number" value="@item._quantity" name="carQuantity" style="text-align:right" id="soluong"/>
+                                    <input type="submit" value="Cập nhật" id="updatesoluong" disabled/>
                                 }
                             </td>
                             <td style="width: 10.43557%;text-align: center;">@total.ToString("#,##0").Replace(',', '.') $</td>

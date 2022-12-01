@@ -8,10 +8,12 @@
 <h2>Sửa thông tin sản phẩm</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit","Products",FormMethod.Post, new
 {
-    @Html.AntiForgeryToken()
-    
+    enctype = "multipart/form-data"
+}))
+{
+    @Html.AntiForgeryToken()  {
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -62,17 +64,21 @@
             <b>Hình Sản Phẩm</b>
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.ImagePro, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.TextBoxFor(model => model.ImagePro, "", new { Type = "file", @class = "text-danger" })
+            <input type="file" name="UploadImage" value="Chọn file " />
+
+            @*@Html.EditorFor(model => model.ImagePro, new { htmlAttributes = new { @class = "form-control" } })*@
+            @*@Html.TextBoxFor(model => model.ImagePro, "", new { Type = "file", @class = "text-danger" })*@
         </div>
     </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
+
                 <input type="submit" value="Lưu" class="btn btn-default" />
             </div>
         </div>
     </div>
+    }
 }
 
 <div>

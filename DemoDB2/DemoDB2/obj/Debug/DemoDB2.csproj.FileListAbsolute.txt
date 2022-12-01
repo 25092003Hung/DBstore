@@ -345,3 +345,4 @@ C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CoreCompile
 C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\obj\Debug\DemoDB2.dll
 C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\obj\Debug\DemoDB2.pdb
+C:\Users\PC\Desktop\DBstore\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.AssemblyReference.cache

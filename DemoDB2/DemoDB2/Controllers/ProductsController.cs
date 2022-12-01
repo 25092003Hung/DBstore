@@ -21,7 +21,7 @@ namespace DemoDB2.Controllers
         {
             var products = db.Products.Include(p => p.Category1);
             return View(products.ToList());
-            
+
         }
 
         // GET: Products/Details/5
@@ -51,17 +51,21 @@ namespace DemoDB2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product item)
+        public ActionResult Create(Product item, HttpPostedFileBase UploadImage)
         {
             try
             {
-                if (item.UploadImage != null)
+                if (UploadImage != null)
                 {
-                    string filename = Path.GetFileNameWithoutExtension(item.UploadImage.FileName);
-                    string extent = Path.GetExtension(item.UploadImage.FileName);
-                    filename = filename + extent;
-                    item.ImagePro = "~/img/" + filename;
-                    item.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/img/"), filename));
+                    //string filename = Path.GetFileNameWithoutExtension(item.UploadImage.FileName);
+                    //string extent = Path.GetExtension(item.UploadImage.FileName);
+                    //filename = filename + extent;
+                    //item.ImagePro = "~/img/" + filename;
+                    //item.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/img/"), filename));
+                    var filename = Path.GetFileName(UploadImage.FileName);
+                    var path = Path.Combine(Server.MapPath("/img"), filename);
+                    item.ImagePro = filename;
+                    UploadImage.SaveAs(path);
                 }
                 db.Products.Add(item);
                 db.SaveChanges();
@@ -94,16 +98,27 @@ namespace DemoDB2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,NamePro,DecriptionPro,Category,Price,ImagePro")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductID,NamePro,DecriptionPro,Category,Price,ImagePro")] Product product, HttpPostedFileBase UploadImage)
         {
-            if (ModelState.IsValid)
+            var productDB = db.Products.Where(s => s.ProductID == product.ProductID).FirstOrDefault();
+            productDB.NamePro = product.NamePro;
+            productDB.OrderDetails = product.OrderDetails;
+            productDB.Price = product.Price;
+            productDB.ProductID = product.ProductID;
+
+
+            if (UploadImage != null)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var filename = Path.GetFileName(UploadImage.FileName);
+                var path = Path.Combine(Server.MapPath("/img"), filename);
+                productDB.ImagePro = filename;
+                UploadImage.SaveAs(path);
             }
-            ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", product.Category);
-            return View(product);
+            //db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+            //ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", product.Category);
         }
 
         // GET: Products/Delete/5
@@ -140,16 +155,16 @@ namespace DemoDB2.Controllers
             }
             base.Dispose(disposing);
         }
-        
+
         public ActionResult ProductList(string category, int? page, string SearchString, double min = double.MinValue, double max = double.MaxValue)
         {
             var products = db.Products.Include(p => p.Category1);
             var cate = db.Categories.Include(p => p.IDCate);
-            if(category != null)
+            if (category != null)
             {
                 Session["cate"] = category;
             }
-            
+
             if (category == null)
             {
                 products = db.Products.OrderByDescending(x => x.NamePro);
@@ -166,7 +181,7 @@ namespace DemoDB2.Controllers
             {
                 products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
             }
-         
+
             // Khai báo mỗi trang 4 sản phẩm
             int pageSize = 4;
             // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
@@ -183,6 +198,6 @@ namespace DemoDB2.Controllers
             listItem.ListCate = db.Categories.ToList<Category>();
             return PartialView(listItem);
         }
-    
+
     }
 }

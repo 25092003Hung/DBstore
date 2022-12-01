@@ -24,7 +24,7 @@ soluong.onclick = function () {
     if (soluong.value > 0) {
         updatesoluong.removeAttribute('disabled');
     }
-    else{
+    else if(soluong.value <0) {
         updatesoluong.setAttribute('disabled');
     }
 }
