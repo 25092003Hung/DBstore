@@ -236,7 +236,7 @@
     <Content Include="lib\counterup\counterup.js" />
     <Content Include="lib\easing\easing.js" />
     <Content Include="lib\isotope\isotope.pkgd.js" />
-    <Content Include="lib\js\controller.js" />
+    <Content Include="lib\js\check.js" />
     <Content Include="lib\js\controller1.js" />
     <Content Include="lib\js\controller2.js" />
     <Content Include="lib\js\main.js" />

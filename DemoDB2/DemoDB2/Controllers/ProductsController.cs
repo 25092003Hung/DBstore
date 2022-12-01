@@ -63,7 +63,7 @@ namespace DemoDB2.Controllers
                     //item.ImagePro = "~/img/" + filename;
                     //item.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/img/"), filename));
                     var filename = Path.GetFileName(UploadImage.FileName);
-                    var path = Path.Combine(Server.MapPath("/img"), filename);
+                    var path = Path.Combine(Server.MapPath("/img"), filename);//img/filename 
                     item.ImagePro = filename;
                     UploadImage.SaveAs(path);
                 }
